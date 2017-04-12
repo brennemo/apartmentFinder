@@ -44,16 +44,20 @@
 			<li ng-repeat="todo in todoList.todos">
 			  <label class="checkbox">
 				<input type="checkbox" ng-model="todo.done">
-				
-				<span class="done-{{todo.done}}">{{ todo.text }} </span><br/>
-				<img ng-src="{{ todo.photo }}"><br/>
+				<span class="done-{{todo.done}}">{{ todo.text }} </span>
+				<br/>
+				<img ng-src="{{ todo.photo }}">
+				<br/>
 				<span class="done-{{todo.done}}">{{ todo.date | date }}</span>
+				<div class="rating">
+					<span class="likes">+</span>
+				</div>
 			  </label>
 			</li>
 		  </ul>
 		  <form ng-submit="todoList.addTodo()">
 			<input type="text" ng-model="todoList.todoText"  size="30"
-				   placeholder="add new todo here">
+				   placeholder="add new apartment here">
 			<input class="btn-info" type="submit" value="add">
 		  </form>
 		</div>

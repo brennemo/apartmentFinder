@@ -5,18 +5,20 @@ app.controller('TodoListController', function() {
 		text:'Apartment 1', 
 		done:true,
 		date:  new Date('2016', '08', '01'), 
-		photo: 'img/placeholder.png'
+		photo: 'img/placeholder.png',
+		likes: 0
 	  },
       {
-		  text:'Apartment 2', 
-		  done:false,
-		  date:  new Date('2016', '08', '01'),
-		  photo: 'img/placeholder.png'
+		text:'Apartment 2', 
+		done:false,
+		date:  new Date('2016', '08', '01'),
+		photo: 'img/placeholder.png',
+		likes: 0
 	  }
 	];
  
     todoList.addTodo = function() {
-      todoList.todos.push({text:todoList.todoText, done:false});
+      todoList.todos.push({text:todoList.todoText, done:false, date: new Date('2016', '08', '01'), photo: 'img/placeholder.png', likes:0});
       todoList.todoText = '';
     };
  
