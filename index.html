@@ -34,26 +34,20 @@
     </nav>
 
     <div class="container main-container">
-      <!--<div class="main">-->
 	  <h1>Apartments</h1>
         <h2>Open Houses and Viewings</h2>
-		<div ng-controller="ApartmentListController as apartmentList">
-		  <span>{{apartmentList.remaining()}} of {{apartmentList.todos.length}} remaining</span>
-		  [ <a href="" ng-click="apartmentList.archive()">archive</a> ]
-		  <!--<ul class="unstyled">-->
-			<div ng-repeat="apartment in apartmentList.apartments" class="row narrow-row">
+		<div ng-controller="ApartmentListController as apartmentList" class="row narrow-row">
+		  <p>{{apartmentList.remaining()}} of {{apartmentList.todos.length}} remaining [ <a href="" ng-click="apartmentList.archive()">archive</a> ]</p>
+			<div ng-repeat="apartment in apartmentList.apartments">
 			  <label class="checkbox">
 				<input type="checkbox" ng-model="apartment.done">
 				<p class="done-{{apartment.done}}">{{ apartment.text }} </p>
 				<img ng-src="{{ apartment.photo }}">
 				<p class="done-{{apartment.done}}">{{ apartment.date | date }}</p>
 				<p class="price">{{ apartment.price }}</p>
-				<div class="rating">
-					<span class="likes">+</span>
-					</div>
+				<!--<div class="rating"><span class="likes">+</span></div>-->
 			  </label>
 			</div>
-		  <!--</ul>-->
 		  <div class="form-group">
 			  <form ng-submit="apartmentList.addApartment()">
 				<input type="text" ng-model="apartmentList.apartmentText"  size="30" placeholder="add new apartment here">
@@ -61,7 +55,6 @@
 			  </form>
 		  </div>
 		</div>
-      <!--</div>--><!-- /.main -->
     </div><!-- /.container -->
     
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
