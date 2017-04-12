@@ -1,5 +1,5 @@
-angular.module('todoApp', [])
-  .controller('TodoListController', function() {
+/*
+todoApp.controller('TodoListController', function() {
     var todoList = this;
     todoList.todos = [
       {text:'Apartment 1', done:true},
@@ -8,6 +8,7 @@ angular.module('todoApp', [])
     todoList.addTodo = function() {
       todoList.todos.push({text:todoList.todoText, done:false});
       todoList.todoText = '';
+	  todoList.date = 'xxx';
     };
  
     todoList.remaining = function() {
@@ -25,4 +26,5 @@ angular.module('todoApp', [])
         if (!todo.done) todoList.todos.push(todo);
       });
     };
-  });
+});
+*/
