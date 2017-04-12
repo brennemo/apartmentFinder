@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="todoApp">
+<html lang="en" ng-app="apartmentApp">
   <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,26 +37,26 @@
       <div class="starter-template">
 	  <h1>Apartments</h1>
         <h2>Open Houses and Viewings</h2>
-		<div ng-controller="TodoListController as todoList">
-		  <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-		  [ <a href="" ng-click="todoList.archive()">archive</a> ]
+		<div ng-controller="ApartmentListController as apartmentList">
+		  <span>{{apartmentList.remaining()}} of {{apartmentList.todos.length}} remaining</span>
+		  [ <a href="" ng-click="apartmentList.archive()">archive</a> ]
 		  <ul class="unstyled">
-			<li ng-repeat="todo in todoList.todos">
+			<li ng-repeat="apartment in apartmentList.apartments">
 			  <label class="checkbox">
-				<input type="checkbox" ng-model="todo.done">
-				<span class="done-{{todo.done}}">{{ todo.text }} </span>
+				<input type="checkbox" ng-model="apartment.done">
+				<span class="done-{{apartment.done}}">{{ apartment.text }} </span>
 				<br/>
-				<img ng-src="{{ todo.photo }}">
+				<img ng-src="{{ apartment.photo }}">
 				<br/>
-				<span class="done-{{todo.done}}">{{ todo.date | date }}</span>
+				<span class="done-{{apartment.done}}">{{ apartment.date | date }}</span>
 				<div class="rating">
 					<span class="likes">+</span>
 				</div>
 			  </label>
 			</li>
 		  </ul>
-		  <form ng-submit="todoList.addTodo()">
-			<input type="text" ng-model="todoList.todoText"  size="30"
+		  <form ng-submit="apartmentList.addApartment()">
+			<input type="text" ng-model="apartmentList.apartmentText"  size="30"
 				   placeholder="add new apartment here">
 			<input class="btn-info" type="submit" value="add">
 		  </form>
@@ -73,7 +73,7 @@
 	<script src="js/apartments.js"></script>
 	
 	<!-- Controllers -->
-	<script src="js/controllers/todoListController.js"></script>
+	<script src="js/controllers/ApartmentListController.js"></script>
 
 
  </body>
