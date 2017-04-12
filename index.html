@@ -44,7 +44,11 @@
 			<li ng-repeat="todo in todoList.todos">
 			  <label class="checkbox">
 				<input type="checkbox" ng-model="todo.done">
-				<span class="done-{{todo.done}}">{{todo.text}}</span>
+				<span class="done-{{todo.done}}">
+					{{ todo.text }} 
+					<br/> 
+					{{ todo.date | date }}
+				</span>
 			  </label>
 			</li>
 		  </ul>

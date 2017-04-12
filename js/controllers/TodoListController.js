@@ -1,8 +1,17 @@
-todoApp.controller('TodoListController', function() {
+app.controller('TodoListController', function() {
     var todoList = this;
     todoList.todos = [
-      {text:'Apartment 1', done:true},
-      {text:'Apartment 2', done:false}];
+      {
+		text:'Apartment 1', 
+		done:true,
+		date:  new Date('2016', '08', '01') 
+	  },
+      {
+		  text:'Apartment 2', 
+		  done:false,
+		  date:  new Date('2016', '08', '01')
+	  }
+	];
  
     todoList.addTodo = function() {
       todoList.todos.push({text:todoList.todoText, done:false});
