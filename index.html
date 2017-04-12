@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<title>Bootstrap 101 Template</title>
+	<title>Apartment Finder</title>
     <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Custom styles for this template -->
@@ -33,35 +33,35 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="starter-template">
+    <div class="container main-container">
+      <!--<div class="main">-->
 	  <h1>Apartments</h1>
         <h2>Open Houses and Viewings</h2>
 		<div ng-controller="ApartmentListController as apartmentList">
 		  <span>{{apartmentList.remaining()}} of {{apartmentList.todos.length}} remaining</span>
 		  [ <a href="" ng-click="apartmentList.archive()">archive</a> ]
-		  <ul class="unstyled">
-			<li ng-repeat="apartment in apartmentList.apartments">
+		  <!--<ul class="unstyled">-->
+			<div ng-repeat="apartment in apartmentList.apartments" class="row narrow-row">
 			  <label class="checkbox">
 				<input type="checkbox" ng-model="apartment.done">
-				<span class="done-{{apartment.done}}">{{ apartment.text }} </span>
-				<br/>
+				<p class="done-{{apartment.done}}">{{ apartment.text }} </p>
 				<img ng-src="{{ apartment.photo }}">
-				<br/>
-				<span class="done-{{apartment.done}}">{{ apartment.date | date }}</span>
+				<p class="done-{{apartment.done}}">{{ apartment.date | date }}</p>
+				<p class="price">{{ apartment.price }}</p>
 				<div class="rating">
 					<span class="likes">+</span>
-				</div>
+					</div>
 			  </label>
-			</li>
-		  </ul>
-		  <form ng-submit="apartmentList.addApartment()">
-			<input type="text" ng-model="apartmentList.apartmentText"  size="30"
-				   placeholder="add new apartment here">
-			<input class="btn-info" type="submit" value="add">
-		  </form>
+			</div>
+		  <!--</ul>-->
+		  <div class="form-group">
+			  <form ng-submit="apartmentList.addApartment()">
+				<input type="text" ng-model="apartmentList.apartmentText"  size="30" placeholder="add new apartment here">
+				<input class="btn-info" type="submit" value="add">
+			  </form>
+		  </div>
 		</div>
-      </div><!-- /.starter-template -->
+      <!--</div>--><!-- /.main -->
     </div><!-- /.container -->
     
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

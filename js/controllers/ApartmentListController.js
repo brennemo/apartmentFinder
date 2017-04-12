@@ -4,12 +4,14 @@ app.controller('ApartmentListController', function() {
       {
 		text:'Apartment 1', 
 		done:true,
+		price: 2000,
 		date:  new Date('2016', '08', '01'), 
 		photo: 'img/placeholder.png',
 		likes: 0
 	  },
       {
 		text:'Apartment 2', 
+		price: 2000,
 		done:false,
 		date:  new Date('2016', '08', '01'),
 		photo: 'img/placeholder.png',
@@ -18,7 +20,7 @@ app.controller('ApartmentListController', function() {
 	];
  
     apartmentList.addApartment = function() {
-      apartmentList.apartments.push({text:apartmentList.apartmentText, done:false, date: new Date('2016', '08', '01'), photo: 'img/placeholder.png', likes:0});
+      apartmentList.apartments.push({text:apartmentList.apartmentText, done:false, price: 2000, date: new Date('2016', '08', '01'), photo: 'img/placeholder.png', likes:0});
       apartmentList.apartmentText = '';
     };
  

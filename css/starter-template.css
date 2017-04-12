@@ -1,7 +1,82 @@
 body {
   padding-top: 50px;
+  background-color: #f2f2f2 ;
 }
-.starter-template {
-  padding: 40px 15px;
-  /*text-align: center;*/
+
+.main-container {
+	background-color: #ffffff;
+	
 }
+
+.narrow-row {
+	width: 50%;
+	margin: 0 auto;
+	background-color: #f2f2f2 ;
+}
+
+/*
+.main {
+ background-color: #f2f2f2 ;
+ padding: 40px 0;
+}
+
+
+.thumbnail {
+ border: 0px;
+  padding-right: 15px;
+  padding-left: 15px;
+   border-radius: 0;
+   margin-bottom:50px;
+   
+}
+*/
+
+.rating {
+ text-align: left;
+ -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+ margin: -50px 0 0 180px ;
+}
+
+/*
+.price {
+ background-color: #cc6699 ;
+ color: #fff;
+ font-size: 14px;
+   border-radius: 50%;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+   font-weight: 200;
+   height: 60px;
+   line-height: 60px;
+   text-align: center;
+   width: 60px;
+ position: absolute;
+ top: -10px;
+ left: 180px;
+}
+
+.likes,
+.dislikes {
+   background: #cc6699 ;
+ color: #fff;
+ cursor: pointer;
+ display: inline-block;
+ font-size: 14px;
+   line-height: 40px;
+   min-width: 40px;
+   height: 40px;
+   border-radius: 50%;
+  text-align: center;
+   font-weight: 200;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+   transition: background 500ms;
+}
+
+.likes:hover,
+.dislikes:hover {
+ color: #cc6699 ;
+   background: rgba(246, 90, 91, 0.25);
+   transition: background 500ms;
+}
+*/
