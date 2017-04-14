@@ -16,9 +16,27 @@ app.controller('ApartmentListController', function() {
 		date:  new Date('2016', '08', '01'),
 		photo: 'img/placeholder.png',
 		likes: 0
+	  },
+              {
+		text:'Apartment 3', 
+		done:true,
+		price: 2000,
+		date:  new Date('2016', '08', '01'), 
+		photo: 'img/placeholder.png',
+		likes: 0
+	  },
+      {
+		text:'Apartment 4', 
+		price: 2000,
+		done:false,
+		date:  new Date('2016', '08', '01'),
+		photo: 'img/placeholder.png',
+		likes: 0
 	  }
+        
 	];
  
+    /*
     apartmentList.addApartment = function() {
       apartmentList.apartments.push({text:apartmentList.apartmentText, done:false, price: 2000, date: new Date('2016', '08', '01'), photo: 'img/placeholder.png', likes:0});
       apartmentList.apartmentText = '';
@@ -39,4 +57,5 @@ app.controller('ApartmentListController', function() {
         if (!apartment.done) apartmentList.apartments.push(apartment);
       });
     };
+    */
 });
