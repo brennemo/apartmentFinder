@@ -77,3 +77,14 @@ body {
     border-bottom: 0;
   }
 }
+
+/* Custom colors for nav bar */
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+        color: #555;
+        background-color: #99cccc;
+    }
+
+    .nav-pills > li.active > a:hover {
+        background-color: #bbdfdf;
+        color: #555;
+    }

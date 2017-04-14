@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="apartmentApp">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body ng-app="apartmentApp">
 
     <div class="container">
       <div class="header clearfix">
@@ -34,7 +34,7 @@
             <li role="presentation"><a href="#">Contact</a></li>
           </ul>
         </nav>
-        <h3 class="text-muted">Project name</h3>
+        <h3 class="text-muted">Apartment Finder</h3>
       </div>
 
       <!--<div class="jumbotron">
@@ -43,14 +43,17 @@
         <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
       </div>-->
 
-      <div ng-controller="ApartmentListController as apartmentList" class="row marketing">
+      <div ng-controller="ApartmentListController" class="row marketing">
           
           <h3>Apartments avaiable in your area:</h3>
-        <div ng-repeat="apartment in apartmentList.apartments" class="col-lg-6">  
+        <div ng-repeat="apartment in apartments" class="col-lg-6">  
+            <!--<apartmentListing info="apartment"></apartmentListing>-->
+            
             <h4 class="done-{{apartment.done}}">{{ apartment.text }} </h4>
             <img ng-src="{{ apartment.photo }}">
             <p class="done-{{apartment.done}}">{{ apartment.date | date }}</p>
-            <p class="price">{{ apartment.price }}</p>
+            <p class="price">{{ apartment.price | currency }} / month</p>
+            
         </div>
       </div>
 
@@ -73,5 +76,8 @@
 	
 	<!-- Controllers -->
 	<script src="js/controllers/ApartmentListController.js"></script>
+      
+    <!-- Directives -->
+    <script src="js/directives/apartmentListing.js"></script>  
   </body>
 </html>
