@@ -42,12 +42,13 @@
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
       </div>-->
-
-      <div ng-controller="ApartmentListController" class="row marketing">
+    
+        <!-- Directive only works on server --> 
+      <!--<div ng-controller="ApartmentListController" class="row marketing">-->
           
           <h3>Apartments avaiable in your area:</h3>
         <div ng-repeat="apartment in apartments" class="col-lg-6">  
-            <!--<apartmentListing info="apartment"></apartmentListing>-->
+            <apartment-listing info="apartment"></apartment-listing>
             
             <h4 class="done-{{apartment.done}}">{{ apartment.text }} </h4>
             <img ng-src="{{ apartment.photo }}">
