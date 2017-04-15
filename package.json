@@ -8,6 +8,7 @@
     "body-parser": "^1.17.1",
     "bootstrap-sass": "^3.3.7",
     "express": "^4.15.2",
+    "method-override": "^2.3.8",
     "mongoose": "^4.9.4"
   },
   "devDependencies": {},
