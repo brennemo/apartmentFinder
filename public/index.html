@@ -26,7 +26,8 @@
   <body ng-app="apartmentApp">
 
     <div class="container">
-      <!--<div class="header clearfix">
+        <!--<navbar></navbar>-->
+        <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active"><a href="#">Home</a></li>
@@ -35,8 +36,7 @@
           </ul>
         </nav>
         <h3 class="text-muted">Apartment Finder</h3>
-      </div>-->
-        <navbar></navbar>
+      </div>
 
       <!--<div class="jumbotron">
         <h1>Jumbotron heading</h1>
@@ -46,12 +46,12 @@
     
         <!-- Directive only works on server --> 
       <div ng-controller="ApartmentListController" class="row marketing">
-          
           <h3>Apartments avaiable in your area:</h3>
-        <div ng-repeat="apartment in apartments" class="col-lg-6">  
+          <ng-view></ng-view>
+        <!--<div ng-repeat="apartment in apartments" class="col-lg-6">  
             
             <apartment-listing info="apartment"></apartment-listing>
-        </div>
+        </div>-->
       </div>
 
       <footer class="footer">
@@ -75,7 +75,7 @@
 	<script src="js/controllers/ApartmentListController.js"></script>
       
     <!-- Directives -->
-      <script src="js/directives/navbar.js"></script> 
+    <!--<script src="js/directives/navbar.js"></script>-->
     <script src="js/directives/apartmentListing.js"></script>  
   </body>
 </html>

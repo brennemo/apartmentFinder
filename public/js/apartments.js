@@ -1,1 +1,1 @@
-var app = angular.module('apartmentApp', []);
+var app = angular.module('apartmentApp', ['ngRoute', 'appRoutes', 'ApartmentListController']);
