@@ -44,17 +44,18 @@
       </div>-->
     
         <!-- Directive only works on server --> 
-      <!--<div ng-controller="ApartmentListController" class="row marketing">-->
+      <div ng-controller="ApartmentListController" class="row marketing">
           
           <h3>Apartments avaiable in your area:</h3>
         <div ng-repeat="apartment in apartments" class="col-lg-6">  
-            <apartment-listing info="apartment"></apartment-listing>
             
+            <apartment-listing info="apartment"></apartment-listing>
+            <!--
             <h4 class="done-{{apartment.done}}">{{ apartment.text }} </h4>
             <img ng-src="{{ apartment.photo }}">
             <p class="done-{{apartment.done}}">{{ apartment.date | date }}</p>
             <p class="price">{{ apartment.price | currency }} / month</p>
-            
+            -->
         </div>
       </div>
 
