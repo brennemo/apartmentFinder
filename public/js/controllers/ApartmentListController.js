@@ -1,8 +1,10 @@
 //app.controller('ApartmentListController', ['$scope', function($scope) {
-angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', function($scope) {
+angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', function($scope, ApartmentListService) {
+    
+    $scope.apartments = ApartmentListService.get();
 
     //This will be replaced by MongoDB schema 
-    $scope.apartments = [
+    /*$scope.apartments = [
       {
 		address:'Apartment 1', 
 		price: 2000,
@@ -28,5 +30,5 @@ angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', f
 		photo: 'img/placeholder.png',
 	  }
         
-	]
+	]*/
 }]);

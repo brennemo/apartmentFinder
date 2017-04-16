@@ -12,13 +12,4 @@ var ApartmentSchema = new Schema({
 
 module.exports = mongoose.model('Apartment', ApartmentSchema);
 
-/*
-// define model
-module.exports = mongoose.model('Apartments', {
-    address: String,
-    price: Number,
-    photo: String, 
-    date: { type: Date, default: Date.now }
-});
 
-*/
