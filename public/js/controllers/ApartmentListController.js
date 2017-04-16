@@ -1,6 +1,7 @@
-app.controller('ApartmentListController', ['$scope', function($scope) {
-    //var apartmentList = this;
-    $scope.apartments = [
+//app.controller('ApartmentListController', ['$scope', function($scope) {
+angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', function($scope) {
+    $scope.testMessage = 'Testing!';
+    /*$scope.apartments = [
       {
 		text:'Apartment 1', 
 		price: 2000,
@@ -30,5 +31,5 @@ app.controller('ApartmentListController', ['$scope', function($scope) {
 		likes: 0
 	  }
         
-	];
+	];*/
 }]);

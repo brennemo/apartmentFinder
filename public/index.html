@@ -15,6 +15,10 @@
 
     <!-- Custom styles for this template -->
     <link href="css/jumbotron-narrow.css" rel="stylesheet">
+      
+    <!-- Angular -->
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -23,7 +27,7 @@
     <![endif]-->
   </head>
 
-  <body ng-app="apartmentApp">
+  <body ng-app="apartmentApp" ng-controller="ApartmentListController" >
 
     <div class="container">
         <!--<navbar></navbar>-->
@@ -43,15 +47,14 @@
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
       </div>-->
-    
         <!-- Directive only works on server --> 
-      <div ng-controller="ApartmentListController" class="row marketing">
+      <div class="row marketing">
           <h3>Apartments avaiable in your area:</h3>
-          <ng-view></ng-view>
-        <!--<div ng-repeat="apartment in apartments" class="col-lg-6">  
+          <div ng-view></div>   <!-- TEST --> 
+       <!--<div ng-repeat="apartment in apartments" class="col-lg-6">  
             
-            <apartment-listing info="apartment"></apartment-listing>
-        </div>-->
+            <apartment-listing info="apartment"></apartment-listing>-->
+        </div>
       </div>
 
       <footer class="footer">
@@ -61,7 +64,7 @@
     </div> <!-- /container -->
 
     <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>  
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->  
       
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -70,12 +73,15 @@
 	
 	<!-- Modules -->
 	<script src="js/apartments.js"></script>
+    
+    <!-- Routes -->
+    <script src="js/apartmentRoutes.js"></script>
 	
 	<!-- Controllers -->
 	<script src="js/controllers/ApartmentListController.js"></script>
       
     <!-- Directives -->
     <!--<script src="js/directives/navbar.js"></script>-->
-    <script src="js/directives/apartmentListing.js"></script>  
+    <!--<script src="js/directives/apartmentListing.js"></script>-->  
   </body>
 </html>

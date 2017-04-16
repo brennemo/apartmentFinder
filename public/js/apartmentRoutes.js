@@ -6,8 +6,8 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/', {
 			templateUrl: 'views/apartmentListing.html',
 			controller: 'ApartmentListController'
-		})
+		});
 
-	$locationProvider.html5Mode(true);
+	//$locationProvider.html5Mode(true);
 
 }]);
