@@ -16,22 +16,13 @@ var port = process.env.PORT || 8080;
 //connect to database (without /config/db.js credentials)
 mongoose.connect('mongodb://localhost/test');
 var Apartment = require('./app/models/apartments');
-/*
-var ApartmentSchema = new Schema({
-  name: String,
-  price: Number,
-  date_available: { type: Date, default: Date.now },
+
+// create some apartments ========================================
+var apt1 = new Apartment({ address: '123 Main St', price: 2000, photo: 'img/placeholder.png' });
+
+apt1.save(function (err) {
+  if (err) return console.error(err);
 });
-
-//Basic Hello World 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-})
-
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-})
-*/
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
