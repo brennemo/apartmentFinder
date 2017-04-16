@@ -2,19 +2,20 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema; 
+//var Schema = mongoose.Schema; 
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 // config files
-var db = require('./config/db');
+//var db = require('./config/db');
 
 // port
 var port = process.env.PORT || 8080; 
 
 
 //connect to database (without /config/db.js credentials)
-//mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/test');
+var Apartment = require('./app/models/apartments');
 /*
 var ApartmentSchema = new Schema({
   name: String,
@@ -64,14 +65,41 @@ router.get('/', function(req, res) {
 	res.json({ message: 'hooray! welcome to our api!' });	
 });
 
+// on routes that end in /apartments
+// ----------------------------------------------------
+router.route('/apartments')
+
+	// create an apartment (accessed at POST http://localhost:8080/apartments)
+	.post(function(req, res) {
+		
+		var apt = new Apartment();	
+		apt.name = req.body.name;  
+    
+		apt.save(function(err) {
+			if (err)
+				res.send(err);
+
+			res.json({ message: 'Apartment created!' });
+		});
+
+		
+	})
+
+	// get all the apartments (accessed at GET http://localhost:8080/api/apartments)
+	.get(function(req, res) {
+		Apartment.find(function(err, apts) {
+			if (err)
+				res.send(err);
+
+			res.json(apts);
+		});
+	});
+
 app.use('/api', router);
 
 // start app ===============================================
 // startup our app at http://localhost:8080
 app.listen(port);               
 
-// shoutout to the user                     
-console.log('Magic happens on port ' + port);
-
 // expose app           
-exports = module.exports = app;        
+//exports = module.exports = app;        
