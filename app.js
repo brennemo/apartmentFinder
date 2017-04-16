@@ -14,7 +14,7 @@ var port = process.env.PORT || 8080;
 
 
 //connect to database (without /config/db.js credentials)
-mongoose.connect('mongodb://localhost/test');
+//mongoose.connect('mongodb://localhost/test');
 /*
 var ApartmentSchema = new Schema({
   name: String,
@@ -49,7 +49,22 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public')); 
 
 // routes ==================================================
-require('./app/routes')(app); // configure our routes
+//require('./app/routes')(app); // configure our routes
+var router = express.Router();
+
+// middleware to use for all requests
+router.use(function(req, res, next) {
+	// do logging
+	console.log('Something is happening.');
+	next();
+});
+
+// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
+router.get('/', function(req, res) {
+	res.json({ message: 'hooray! welcome to our api!' });	
+});
+
+app.use('/api', router);
 
 // start app ===============================================
 // startup our app at http://localhost:8080
@@ -59,4 +74,4 @@ app.listen(port);
 console.log('Magic happens on port ' + port);
 
 // expose app           
-exports = module.exports = app;                         
+exports = module.exports = app;        

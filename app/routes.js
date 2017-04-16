@@ -1,7 +1,11 @@
- // app/routes.js
+/* 
+// app/routes.js
 
 // grab the nerd model we just created
 var Apartments = require('./models/apartments');
+
+//make some objects ... not sure where to put this 
+//var apt1 = new Apartments({address: '1234 Main St', price: 2000, photo: 'img/placeholder.png'});
 
     module.exports = function(app) {
 
@@ -11,15 +15,15 @@ var Apartments = require('./models/apartments');
 
         // sample api route
         app.get('/api/apartments', function(req, res) {
-            // use mongoose to get all nerds in the database
-            Nerd.find(function(err, apartments) {
+            // use mongoose to get all apartments
+            Apartments.find(function(err, apartments) {
 
                 // if there is an error retrieving, send the error. 
                                 // nothing after res.send(err) will execute
                 if (err)
                     res.send(err);
 
-                res.json(apartments); // return all nerds in JSON format
+                res.send(apartments); // return all nerds in JSON format
             });
         });
 
@@ -29,7 +33,8 @@ var Apartments = require('./models/apartments');
         // frontend routes =========================================================
         // route to handle all angular requests
         app.get('*', function(req, res) {
-            res.sendfile('./public/views/index.html'); // load our public/index.html file
+            res.sendfile('./public/index.html'); // load our public/index.html file
         });
 
     };
+*/
