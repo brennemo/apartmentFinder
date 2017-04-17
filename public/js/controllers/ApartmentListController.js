@@ -1,7 +1,8 @@
 //app.controller('ApartmentListController', ['$scope', function($scope) {
-angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', function($scope, ApartmentListService) {
+angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', 'ApartmentListService', function($scope, ApartmentListService) {
     
     $scope.apartments = ApartmentListService.get();
+    $scope.test = ApartmentListService.test();
 
     //This will be replaced by MongoDB schema 
     /*$scope.apartments = [

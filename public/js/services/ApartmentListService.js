@@ -3,6 +3,9 @@ angular.module('ApartmentListService', []).factory('ApartmentListService', ['$ht
     return {
         get : function() {
             return $http.get('/api/apartments');
+        },
+        test: function() {
+            return "BLORPS";
         }
     }       
 

@@ -1,6 +1,8 @@
+<h1> {{test}} </h1>
+
 <div ng-repeat="apartment in apartments" class="col-lg-6">  
-  <h4>{{ apartment.text }} </h4>
-  <img ng-src="{{ apartment.photo }}">
-  <p>{{ apartment.date | date }}</p>
-  <p class="price">{{ apartment.price | currency }} / month</p>
+  <h4>{{ apartment.data.address }} </h4>
+  <!--<img ng-src="{{ apartment.photo }}">
+  <p>{{ apartment.data.date | date }}</p>
+  <p class="price">{{ apartment.data.price | currency }} / month</p>-->
 </div>
