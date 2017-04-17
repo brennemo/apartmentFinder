@@ -1,7 +1,5 @@
 //app.controller('ApartmentListController', ['$scope', function($scope) {
 angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', 'ApartmentListService', function($scope, ApartmentListService) {
-    
-    //$scope.apartments = ApartmentListService.get();
     $scope.status;
     $scope.apartments;
     
@@ -16,7 +14,5 @@ angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', '
             }); 
         
     }
-    
-    $scope.test = ApartmentListService.test();
     
 }]);
