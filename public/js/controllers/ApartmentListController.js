@@ -6,7 +6,7 @@ angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', '
     getApartments();
     
     function getApartments() {
-        ApartmentListService.get() 
+        ApartmentListService.getApartments() 
             .then(function(response) {
                 $scope.apartments = response.data;   
         }, function (error) {
