@@ -18,6 +18,7 @@ mongoose.connect('mongodb://localhost/test');
 var Apartment = require('./app/models/apartments');
 
 // create some apartments ========================================
+/*
 var apts = [];
 
 for (var i = 0; i < 10; i++) {
@@ -27,12 +28,6 @@ for (var i = 0; i < 10; i++) {
         if (err) return console.error(err);
     });
 }
-/*
-var apt1 = new Apartment({ address: '123 Main St', price: 2000, photo: 'img/placeholder.png' });
-
-apt1.save(function (err) {
-  if (err) return console.error(err);
-});
 */
 
 // get all data/stuff of the body (POST) parameters
@@ -94,6 +89,51 @@ router.route('/apartments')
 				res.send(err);
             console.log('Get!');
 			res.json(apts);
+		});
+	});
+
+// on routes that end in /apartments/:apt_id
+// ----------------------------------------------------
+router.route('/apartments/:apt_id')
+
+	// get apt with that id
+	.get(function(req, res) {
+		Apartment.findById(req.params.apt_id, function(err, apt) {
+			if (err)
+				res.send(err);
+			res.json(apt);
+		});
+	})
+
+	// update apt with this id
+	.put(function(req, res) {
+		Apartment.findById(req.params.apt_id, function(err, apt) {
+
+			if (err)
+				res.send(err);
+
+			apt.address = req.body.address;
+            apt.price = req.body.price;
+            
+			apt.save(function(err) {
+				if (err)
+					res.send(err);
+
+				res.json({ message: 'Apartment updated!' });
+			});
+
+		});
+	})
+
+	// delete apt with this id
+	.delete(function(req, res) {
+		Apartment.remove({
+			_id: req.params.apt_id
+		}, function(err, apt) {
+			if (err)
+				res.send(err);
+
+			res.json({ message: 'Successfully deleted' });
 		});
 	});
 
