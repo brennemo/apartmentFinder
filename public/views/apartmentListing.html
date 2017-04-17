@@ -3,4 +3,8 @@
   <img ng-src="{{ apartment.photo }}">
   <p>{{ apartment.date | date }}</p>
   <p>{{ apartment.price | currency }} / month</p>
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default">edit</button>
+        <button type="button" class="btn btn-default" ng-click="deleteApartment(apartment._id)">delete</button>
+    </div>
 </div>
