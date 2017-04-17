@@ -1,35 +1,22 @@
 //app.controller('ApartmentListController', ['$scope', function($scope) {
 angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', 'ApartmentListService', function($scope, ApartmentListService) {
     
-    $scope.apartments = ApartmentListService.get();
-    $scope.test = ApartmentListService.test();
-
-    //This will be replaced by MongoDB schema 
-    /*$scope.apartments = [
-      {
-		address:'Apartment 1', 
-		price: 2000,
-		date:  new Date('2016', '08', '01'), 
-		photo: 'img/placeholder.png',
-	  },
-      {
-		address:'Apartment 2', 
-		price: 2000,
-		date:  new Date('2016', '08', '01'),
-		photo: 'img/placeholder.png',
-	  },
-      {
-		address:'Apartment 3', 
-		price: 2000,
-		date:  new Date('2016', '08', '01'), 
-		photo: 'img/placeholder.png',
-	  },
-      {
-		address:'Apartment 4', 
-		price: 2000,
-		date:  new Date('2016', '08', '01'),
-		photo: 'img/placeholder.png',
-	  }
+    //$scope.apartments = ApartmentListService.get();
+    $scope.status;
+    $scope.apartments;
+    
+    getApartments();
+    
+    function getApartments() {
+        ApartmentListService.get() 
+            .then(function(response) {
+                $scope.apartments = response.data;   
+        }, function (error) {
+                $scope.status = 'Unable to load apartment data: ' + error.message;
+            }); 
         
-	]*/
+    }
+    
+    $scope.test = ApartmentListService.test();
+    
 }]);
