@@ -6,7 +6,7 @@ angular.module('ApartmentListService', []).factory('ApartmentListService', ['$ht
         },
         
         getApartment : function(apt_id) {
-            return $http.get('/api/apartments' + apt_id);
+            return $http.get('/api/apartments/' + apt_id);
         },
         
         insertApartment: function(apt_id) {
