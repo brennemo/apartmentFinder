@@ -18,7 +18,7 @@ angular.module('ApartmentListService', []).factory('ApartmentListService', ['$ht
         },
         
         deleteApartment: function(apt_id) {
-            return $http.delete('/api/apartments' + apt_id);
+            return $http.delete('/api/apartments/' + apt_id);
         }
     }      
 

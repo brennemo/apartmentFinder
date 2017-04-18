@@ -28,8 +28,14 @@ angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', '
     }
     
     $scope.deleteApartment = function(apt_id) {
-        console.log("deleteApartment() will happen here.");    
-        console.log(apt_id);
+        //console.log("deleteApartment() will happen here.");    
+        //console.log(apt_id);
+        
+        ApartmentListService.deleteApartment(apt_id)
+            .then (function(response) {
+                $scope.status = "Apartment deleted.";  
+                getApartments();        //refresh apartments 
+            });
     }
     
     
