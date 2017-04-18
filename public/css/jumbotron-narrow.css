@@ -91,6 +91,17 @@ body {
         color: #555;
     }
 
+/*Apartment Image*/
+.aptImg {
+    position: relative;
+}
+
+.glyphicon-heart {
+    color: #fff;
+    padding: 10px;
+    position: absolute; 
+}
+
 /*Fonts*/
 .row h3 {
     

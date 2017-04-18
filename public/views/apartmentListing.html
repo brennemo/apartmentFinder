@@ -1,10 +1,15 @@
-<div ng-repeat="apartment in apartments" class="col-lg-4">  
-  <h4>{{ apartment.address }} </h4>
-  <img ng-src="{{ apartment.photo }}">
-  <p>{{ apartment.date | date }}</p>
-  <p>{{ apartment.price | currency }} / month</p>
-    <div class="btn-group btn-group-s" role="group" aria-label="...">
-      <button type="button" class="btn btn-default" ng-click="updateApartment({apt_id:apartment._id})">EDIT</button>
-        <button type="button" class="btn btn-default" ng-click="deleteApartment(apartment._id)">DELETE</button>
+
+<div ng-repeat="apartment in apartments" class="col-sm-4">
+    <h4>{{ apartment.address }}</h4>
+    <div class="aptImg">    
+        <img ng-src="{{ apartment.photo }}">
+        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
     </div>
-</div>
+
+      <p>{{ apartment.date | date }}</p>
+      <p>{{ apartment.price | currency }} / month</p>
+        <div class="btn-group btn-group-s" role="group" aria-label="...">
+          <button type="button" class="btn btn-default" ng-click="updateApartment({apt_id:apartment._id})">EDIT</button>
+            <button type="button" class="btn btn-default" ng-click="deleteApartment(apartment._id)">DELETE</button>
+        </div>
+    </div>
