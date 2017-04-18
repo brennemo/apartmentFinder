@@ -2,6 +2,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -22,6 +23,7 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
+  font-family: 'Playfair Display', serif;
 }
 
 /* Custom page footer */
@@ -88,3 +90,17 @@ body {
         background-color: #bbdfdf;
         color: #555;
     }
+
+/*Fonts*/
+.row h3 {
+    
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #ff9999;
+    
+}
+
+.row h4 {
+    font-style: italic;
+    
+}
