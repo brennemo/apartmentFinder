@@ -104,3 +104,11 @@ body {
     font-style: italic;
     
 }
+
+.btn-group-s .btn {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.nav a {
+    color: #ff9999;
+}
