@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var ApartmentSchema = new Schema({
     address: String,
     price: Number,
-    photo: { type: String, default: 'img/placeholder.png' },
+    photo: { type: String, default: 'img/placeholder1.png' },
     date: { type: Date, default: Date.now }
 });
 

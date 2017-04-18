@@ -18,17 +18,18 @@ mongoose.connect('mongodb://localhost/test');
 var Apartment = require('./app/models/apartments');
 
 // create some apartments ========================================
-/*
+
 var apts = [];
 
 for (var i = 0; i < 10; i++) {
-    apts[i] = new Apartment({ address: 111+i+' Main St', price: 2000, photo: 'img/placeholder.png' });
+    var imgIdx = i % 3 + 1; 
+    apts[i] = new Apartment({ address: 111+i+' Main St', price: 2000, photo: 'img/placeholder'+ imgIdx + '.png' });
     
     apts[i].save(function (err) {
         if (err) return console.error(err);
     });
 }
-*/
+
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
