@@ -4,9 +4,7 @@ angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', '
     $scope.apartments;
     
     /*Search*/
-    $scope.sortType = 'dishwasher';
-    $scope.sortReverse = false; 
-    $scope.search = '';
+    $scope.searchApt = '';
     
     /*REST*/
     getApartments();
