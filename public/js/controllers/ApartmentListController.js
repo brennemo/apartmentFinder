@@ -3,6 +3,12 @@ angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', '
     $scope.status;
     $scope.apartments;
     
+    /*Search*/
+    $scope.sortType = 'dishwasher';
+    $scope.sortReverse = false; 
+    $scope.search = '';
+    
+    /*REST*/
     getApartments();
     
     function getApartments() {

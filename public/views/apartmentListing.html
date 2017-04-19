@@ -5,7 +5,10 @@
         <img ng-src="{{ apartment.photo }}">
         <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
     </div>
-      <p>{{ apartment.bedrooms}} bedroom</p>
+      <p></p><ng-pluralize count="apartment.bedrooms"
+          when="{'0': 'studio', '1': '1 bedroom', 'other': '{} bedrooms'
+                }">
+    </ng-pluralize></p>
       <p>Pets allowed: {{ apartment.pets }} </p>
       <p>Washer & dryer: {{ apartment.laundry }}</p>
       <p>Dishwasher: {{ apartment.dishwasher }}</p>
