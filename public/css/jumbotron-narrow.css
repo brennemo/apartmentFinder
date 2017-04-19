@@ -125,5 +125,6 @@ body {
 }
 
 label {
-    color: #99cccc;
+    font-weight: 400;
+    color: #555; 
 }
