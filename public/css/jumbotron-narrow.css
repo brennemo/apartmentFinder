@@ -91,15 +91,32 @@ body {
         color: #555;
     }
 
+/*Space out apartment listings*/
+.apartment {
+    padding-bottom: 20px;
+}
+
 /*Apartment Image*/
 .aptImg {
+    display: inline-block;
     position: relative;
 }
 
-.glyphicon-heart {
+.heart {
     color: #fff;
     padding: 10px;
     position: absolute; 
+    top: 0;
+    right: 0;
+}
+
+.price {
+    font-style: italic;
+    color: #555;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 /*Fonts*/

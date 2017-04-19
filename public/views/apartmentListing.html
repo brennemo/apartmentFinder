@@ -8,24 +8,26 @@
 </div>
 <div class="row">
     <h3>Apartments available in your area:</h3>
-    <div ng-repeat="apartment in apartments | filter:searchApt" class="col-sm-4">
-        <h4>{{ apartment.address }}</h4>
+    <div ng-repeat="apartment in apartments | filter:searchApt" class="col-sm-4 apartment">
         <div class="aptImg">    
-            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+            <i class="material-icons heart">favorite</i>
+            <p class="price">{{ apartment.price | currency:'$':0 }} / month</p>
             <img ng-src="{{ apartment.photo }}">
         </div>
-          <p><ng-pluralize count="apartment.bedrooms"
-              when="{'0': 'studio', '1': '1 bedroom', 'other': '{} bedrooms'
-                    }">
-        </ng-pluralize></p>
+        <h4>{{ apartment.address }}</h4>
         <span class = "text-muted" ng-if="apartment.pets"><i class="material-icons md-18">pets</i></span>
         <span class = "text-muted" ng-if="apartment.laundry"><i class="material-icons md-18">local_laundry_service</i></span>
         <span class = "text-muted" ng-if="apartment.dishwasher"><i class="material-icons md-18">restaurant</i></span>
-        <!--<p>Pets allowed: {{ apartment.pets }}</p>
-        <p>Washer & dryer: {{ apartment.laundry }}</p>
-        <p>Dishwasher: {{ apartment.dishwasher }}</p>-->
-        <p>{{ apartment.date | date }}</p>
-        <p>{{ apartment.price | currency }} / month</p>
+        <span>
+              <p><ng-pluralize count="apartment.bedrooms"
+              when="{'0': 'studio', '1': '1 bedroom', 'other': '{} bedrooms'
+                    }">
+            </ng-pluralize></p>
+        </span>
+        <span>
+            <p>{{ apartment.date | date }}</p>
+            <!--<p>{{ apartment.price | currency }} / month</p>-->
+        </span>
         <div class="btn-group btn-group-s" role="group" aria-label="...">
           <a ng-href="/#!/edit-apartment/{{apartment._id}}" class="btn btn-default">EDIT</a>
           <button type="button" class="btn btn-default" ng-click="deleteApartment(apartment._id)">DELETE</button>
