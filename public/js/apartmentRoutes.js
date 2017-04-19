@@ -11,7 +11,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
     .when('/add-apartment', {
 			templateUrl: 'views/addApartment.html',
 			controller: 'ApartmentListController'
-		});
+		})
+    .when('/edit-apartment/:apt_id', {
+        templateUrl: 'views/addApartment.html',
+    });
 
 	//$locationProvider.html5Mode(true);
 

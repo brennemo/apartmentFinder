@@ -1,7 +1,7 @@
 <div class="row">
     <form>
         <div class="input-group">
-          <span class="glyphicon glyphicon-search input-group-addon"  aria-hidden="true"></span>
+            <div class="input-group-addon "><i class="glyphicon glyphicon-search"></i></div>
           <input type="text" class="form-control" placeholder="Search" ng-model="searchApt">
         </div>
     </form>
@@ -24,7 +24,7 @@
         <p>{{ apartment.date | date }}</p>
         <p>{{ apartment.price | currency }} / month</p>
         <div class="btn-group btn-group-s" role="group" aria-label="...">
-          <button type="button" class="btn btn-default" ng-click="updateApartment({apt_id:apartment._id})">EDIT</button>
+          <a ng-href="/#!/edit-apartment/{{apartment._id}}" class="btn btn-default">EDIT</a>
           <button type="button" class="btn btn-default" ng-click="deleteApartment(apartment._id)">DELETE</button>
         </div>
     </div>

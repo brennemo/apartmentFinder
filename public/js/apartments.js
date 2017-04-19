@@ -1,2 +1,2 @@
 //var app = angular.module('apartmentApp', ['ngRoute', 'appRoutes', 'ApartmentListController']);
-angular.module('apartmentApp', ['ngRoute', 'appRoutes', 'AppCtrl', 'ApartmentListService']);
+angular.module('apartmentApp', ['ngRoute', 'appRoutes', 'AppCtrl', 'UpdateCtrl', 'ApartmentListService']);
