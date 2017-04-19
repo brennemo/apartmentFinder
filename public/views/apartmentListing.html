@@ -11,16 +11,19 @@
     <div ng-repeat="apartment in apartments | filter:searchApt" class="col-sm-4">
         <h4>{{ apartment.address }}</h4>
         <div class="aptImg">    
-            <img ng-src="{{ apartment.photo }}">
             <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+            <img ng-src="{{ apartment.photo }}">
         </div>
           <p><ng-pluralize count="apartment.bedrooms"
               when="{'0': 'studio', '1': '1 bedroom', 'other': '{} bedrooms'
                     }">
         </ng-pluralize></p>
-        <p>Pets allowed: {{ apartment.pets }} </p>
+        <span class = "text-muted" ng-if="apartment.pets"><i class="material-icons md-18">pets</i></span>
+        <span class = "text-muted" ng-if="apartment.laundry"><i class="material-icons md-18">local_laundry_service</i></span>
+        <span class = "text-muted" ng-if="apartment.dishwasher"><i class="material-icons md-18">restaurant</i></span>
+        <!--<p>Pets allowed: {{ apartment.pets }}</p>
         <p>Washer & dryer: {{ apartment.laundry }}</p>
-        <p>Dishwasher: {{ apartment.dishwasher }}</p>
+        <p>Dishwasher: {{ apartment.dishwasher }}</p>-->
         <p>{{ apartment.date | date }}</p>
         <p>{{ apartment.price | currency }} / month</p>
         <div class="btn-group btn-group-s" role="group" aria-label="...">
