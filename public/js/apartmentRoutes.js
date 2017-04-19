@@ -14,6 +14,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		})
     .when('/edit-apartment/:apt_id', {
         templateUrl: 'views/addApartment.html',
+        controller: 'UpdateApartmentController'
     });
 
 	//$locationProvider.html5Mode(true);
