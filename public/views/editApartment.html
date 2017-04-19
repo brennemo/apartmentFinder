@@ -10,7 +10,7 @@
       <div class="form-group row">
           <label for="example-text-input" class="col-2 col-form-label">Number of Bedrooms</label>
           <div class="col-4">
-            <input class="form-control" type="number" value="{{apartment.bedrooms | number}}" id="example-text-input">
+            <input class="form-control" type="number" value="{{apartment.bedrooms | number}}" id="example-text-input" min="0" max="4">
           </div>
       </div>
       <div class="form-group row">
@@ -27,19 +27,19 @@
       </div>
       <div class="form-group row">
         <label class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" ng-checked="{{apartment.pets}}">
+          <input type="checkbox" class="custom-control-input" ng-model="apartment.pets">
           <span class="custom-control-indicator"></span>
           <span class="custom-control-description">Pets allowed</span>
         </label>
 
         <label class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" ng-checked="{{apartment.laundry}}">
+          <input type="checkbox" class="custom-control-input" ng-model="apartment.laundry">
           <span class="custom-control-indicator"></span>
           <span class="custom-control-description">Washer and dryer</span>
         </label>
 
         <label class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" ng-checked="{{apartment.dishwasher}}">
+          <input type="checkbox" class="custom-control-input" ng-model="apartment.dishwasher">
           <span class="custom-control-indicator"></span>
           <span class="custom-control-description">Dishwasher</span>
         </label>
