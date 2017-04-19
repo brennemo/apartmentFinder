@@ -1,11 +1,14 @@
-
+<h3>Apartments available in your area:</h3>
 <div ng-repeat="apartment in apartments" class="col-sm-4">
     <h4>{{ apartment.address }}</h4>
     <div class="aptImg">    
         <img ng-src="{{ apartment.photo }}">
         <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
     </div>
-
+      <p>{{ apartment.bedrooms}} bedroom</p>
+      <p>Pets allowed: {{ apartment.pets }} </p>
+      <p>Washer & dryer: {{ apartment.laundry }}</p>
+      <p>Dishwasher: {{ apartment.dishwasher }}</p>
       <p>{{ apartment.date | date }}</p>
       <p>{{ apartment.price | currency }} / month</p>
         <div class="btn-group btn-group-s" role="group" aria-label="...">
