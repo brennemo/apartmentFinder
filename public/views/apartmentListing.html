@@ -1,10 +1,28 @@
 <div class="row">
     <form>
-        <div class="input-group">
+        <div class="input-group col-sm-3">
             <div class="input-group-addon "><i class="glyphicon glyphicon-search"></i></div>
           <input type="text" class="form-control" placeholder="Search" ng-model="searchApt">
         </div>
     </form>
+<!--</div>
+
+<div class="row">-->
+    <div class="col-sm-2">
+      <input type="text" class="form-control" placeholder="$min">
+    </div>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" placeholder="$max">
+    </div>
+    <div class="col-sm-3">
+        <select class="form-control">
+            <option>Studio+</option>
+            <option>1 br+</option>
+            <option>2 br+</option>
+            <option>3 br+</option>
+            <option>4 br+</option>
+        </select>
+    </div>
 </div>
 <div class="row">
     <h3>Apartments available in your area:</h3>
@@ -15,17 +33,17 @@
             <img ng-src="{{ apartment.photo }}">
         </div>
         <h4>{{ apartment.address }}</h4>
-        <span class = "text-muted" ng-if="apartment.pets"><i class="material-icons md-18">pets</i></span>
-        <span class = "text-muted" ng-if="apartment.laundry"><i class="material-icons md-18">local_laundry_service</i></span>
-        <span class = "text-muted" ng-if="apartment.dishwasher"><i class="material-icons md-18">restaurant</i></span>
         <span>
               <p><ng-pluralize count="apartment.bedrooms"
               when="{'0': 'studio', '1': '1 bedroom', 'other': '{} bedrooms'
                     }">
             </ng-pluralize></p>
         </span>
+        <span class = "text-muted" ng-if="apartment.pets"><i class="material-icons md-18">pets</i></span>
+        <span class = "text-muted" ng-if="apartment.laundry"><i class="material-icons md-18">local_laundry_service</i></span>
+        <span class = "text-muted" ng-if="apartment.dishwasher"><i class="material-icons md-18">restaurant</i></span>
         <span>
-            <p>{{ apartment.date | date }}</p>
+            <p>Available {{ apartment.date | date }}</p>
             <!--<p>{{ apartment.price | currency }} / month</p>-->
         </span>
         <div class="btn-group btn-group-s" role="group" aria-label="...">
