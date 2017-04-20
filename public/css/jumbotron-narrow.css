@@ -96,6 +96,12 @@ body {
     padding-bottom: 20px;
 }
 
+/*Search bar on apartment listing page*/
+.apartment-search  {
+    font-family: 'Playfair Display', serif;
+}
+
+
 /*Apartment Image*/
 .aptImg {
     display: inline-block;
@@ -133,7 +139,7 @@ body {
     
 }
 
-.btn-group-s .btn {
+.btn {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 

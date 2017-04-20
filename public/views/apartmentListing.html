@@ -1,29 +1,48 @@
 <div class="row">
-    <form>
-        <div class="input-group col-sm-3">
-            <div class="input-group-addon "><i class="glyphicon glyphicon-search"></i></div>
-          <input type="text" class="form-control" placeholder="Search" ng-model="searchApt">
+  <div class="col col-sm-8 apartment-search">
+    <div class="input-group">
+      <span class="input-group-addon "><i class="glyphicon glyphicon-search"></i></span>
+      <input type="text" class="form-control form-control-sm" placeholder="Search" ng-model=" searchApt">
+    </div>
+    <div class="row">
+      <div class="col col-xs-4">
+      <input type="text" class="form-control form-inline" placeholder="$min">
+      </div>
+      <div class="col col-xs-4">
+        <input type="text" class="form-control form-inline" placeholder="$max">
+      </div>
+        <div class="col col-xs-4">
+      <select class="form-control">
+        <option>Studio+</option>
+        <option>1 br+</option>
+        <option>2 br+</option>
+        <option>3 br+</option>
+        <option>4 br+</option>
+      </select>
         </div>
-    </form>
-<!--</div>
+    </div>
+  </div><!--col col-sm-8-->
+  <div class="col col-sm-4 apartment-search">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" ng-model="filterPets">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Pets allowed</span>
+        </label>
 
-<div class="row">-->
-    <div class="col-sm-2">
-      <input type="text" class="form-control" placeholder="$min">
-    </div>
-    <div class="col-sm-2">
-      <input type="text" class="form-control" placeholder="$max">
-    </div>
-    <div class="col-sm-3">
-        <select class="form-control">
-            <option>Studio+</option>
-            <option>1 br+</option>
-            <option>2 br+</option>
-            <option>3 br+</option>
-            <option>4 br+</option>
-        </select>
-    </div>
-</div>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Laundry</span>
+        </label>
+
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Dishwasher</span>
+        </label>
+    </div><!--col col-sm-4-->
+</div><!-- row -->
+
 <div class="row">
     <h3>Apartments available in your area:</h3>
     <div ng-repeat="apartment in apartments | filter:searchApt" class="col-sm-4 apartment">
