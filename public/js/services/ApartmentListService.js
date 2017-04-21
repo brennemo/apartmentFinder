@@ -14,7 +14,7 @@ angular.module('ApartmentListService', []).factory('ApartmentListService', ['$ht
         },
             
         updateApartment: function(apt_id) {
-            return $http.put('/api/apartments' + apt_id, apt_id);
+            return $http.put('/api/apartments/' + apt_id, apt_id);
         },
         
         deleteApartment: function(apt_id) {
