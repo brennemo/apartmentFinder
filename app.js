@@ -18,35 +18,10 @@ mongoose.connect('mongodb://localhost/test');
 var Apartment = require('./app/models/apartments');
 
 // create some apartments ========================================
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+var populate = require('./populate');
+populate.createApartments();
 
-var streets = ['Cedar', 'Lake', 'Main', 'Maple', 'Park', '1st', '2nd', '3rd', '4th', '5th'];
-var apts = [];
-
-for (var i = 0; i < 10; i++) {
-    var imgIdx = i % 3 + 1;
-    var addr = getRandomIntInclusive(100, 999)+ ' ' + streets[i] + (i % 2 == 0 ? ' Ave' : ' St');
-    var price = (getRandomIntInclusive(12, 35) * 100);
-    apts[i] = new Apartment({ address: addr, 
-                             price: price, 
-                             bedrooms: getRandomIntInclusive(0, 4), 
-                             pets: getRandomIntInclusive(0, 1), 
-                             laundry: getRandomIntInclusive(0, 1), 
-                             dishwasher: getRandomIntInclusive(0, 1),
-                             photo: 'img/placeholder'+ imgIdx + '.png' 
-                            });
-    
-    apts[i].save(function (err) {
-        if (err) return console.error(err);
-    });
-}
-
-
-// get all data/stuff of the body (POST) parameters
+// get all data/stuff of the body (POST) parameters===============
 // parse application/json 
 app.use(bodyParser.json()); 
 
@@ -130,6 +105,11 @@ router.route('/apartments/:apt_id')
 
 			apt.address = req.body.address;
             apt.price = req.body.price;
+            apt.bedrooms = req.body.bedrooms; 
+            apt.pets = req.body.pets;
+            apt.laundry = req.body.laundry;
+            apt.dishwasher = req.body.dishwasher;
+            /*date and photo here*/
             
 			apt.save(function(err) {
 				if (err)
