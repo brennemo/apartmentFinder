@@ -17,12 +17,12 @@ angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scop
                                             
     $scope.updateApartment = function(apt_id) {
         console.log("updateApartment() will happen here.");  
-        ApartmentListService.updateApartment(apt_id) 
+        /*ApartmentListService.updateApartment(apt_id) 
             .then(function(response) {
                 getApartment();  
         }, function (error) {
                 $scope.status = 'Unable to load apartment data: ' + error.message;
-            });   
+            });  */
     }
     
 }]);
