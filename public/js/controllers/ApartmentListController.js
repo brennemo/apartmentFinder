@@ -2,16 +2,32 @@
 angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', 'ApartmentListService', function($scope, ApartmentListService) {
     $scope.status;
     $scope.apartments;
+    $scope.numApts;
     
     /*Search*/
     $scope.searchApt = '';
     
     /*REST*/
     getApartments();
+    //console.log($scope.apartments);
+    
+    /*Favorites*/
+    $scope.favorites = [];
+    for (var i = 0; i < $scope.numApts; i++) {
+      $scope.favorites.push('#fff');  
+    }
+    $scope.favorite = function(i) {
+        if ($scope.favorites[i] == '#fff')
+            $scope.favorites[i] = '#ff9999'; 
+        else 
+            $scope.favorites[i] = '#fff'; 
+    };
+
     
     function getApartments() {
         ApartmentListService.getApartments() 
             .then(function(response) {
+                $scope.numApts = response.data.length;
                 $scope.apartments = response.data;   
         }, function (error) {
                 $scope.status = 'Unable to load apartment data: ' + error.message;
