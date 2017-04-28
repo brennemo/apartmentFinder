@@ -48,10 +48,12 @@
     <div ng-repeat="apartment in apartments | filter:searchApt" ng-hide="filterPets && apartment.pets == false" class="col-sm-4 apartment">
         <div class="aptImg">    
             <i class="material-icons heart" ng-click="favorite($index)" style="color:{{favorites[$index]}};">favorite</i>
-            <p class="price">{{ apartment.price | currency:'$':0 }} / month</p>
-            <img ng-src="{{ apartment.photo }}">
+            <a ng-href="/#!/{{apartment._id}}">
+                <p class="price">{{ apartment.price | currency:'$':0 }} / month</p>
+                <img ng-src="{{ apartment.photo }}">
+            </a>
         </div>
-        <h4>{{ apartment.address }}</h4>
+        <a ng-href="/#!/{{apartment._id}}"><h4>{{ apartment.address }}</h4></a>
         <span>
               <p><ng-pluralize count="apartment.bedrooms"
               when="{'0': 'studio', '1': '1 bedroom', 'other': '{} bedrooms'

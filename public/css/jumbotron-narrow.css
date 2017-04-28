@@ -136,7 +136,10 @@ body {
 
 .row h4 {
     font-style: italic;
-    
+}
+
+.row a {
+    color: #555;
 }
 
 .btn {

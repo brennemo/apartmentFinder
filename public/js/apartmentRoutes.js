@@ -2,16 +2,23 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
 	$routeProvider
 
-		// home page
-		.when('/', {
-			templateUrl: 'views/apartmentListing.html',
-			controller: 'ApartmentListController'
-		})
+    // home page
+    .when('/', {
+        templateUrl: 'views/apartmentListing.html',
+        controller: 'ApartmentListController'
+    })
+    
+    
+    .when('/:apt_id', {
+        templateUrl: 'views/apartmentDetails.html',
+        controller: 'ApartmentListController'
+    })
     
     .when('/add-apartment', {
 			templateUrl: 'views/editApartment.html',
 			controller: 'UpdateApartmentController'
-		})
+    })
+    
     .when('/edit-apartment/:apt_id', {
         templateUrl: 'views/editApartment.html',
         controller: 'UpdateApartmentController'

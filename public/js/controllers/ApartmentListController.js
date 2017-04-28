@@ -38,21 +38,6 @@ angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', '
             });  
     }
     
-    /*
-    $scope.getApartment = function(apt_id) {
-        console.log("getApartment() will happen here.");    
-    }
-    
-    
-    $scope.insertApartment = function(apt_id) {
-        console.log("insertApartment() will happen here."); 
-    }
-    
-    $scope.updateApartment = function(apt_id) {
-        console.log("updateApartment() will happen here.");  
-        console.log(apt_id);
-    }
-    */
     
     $scope.deleteApartment = function(apt_id) {
         //console.log("deleteApartment() will happen here.");    

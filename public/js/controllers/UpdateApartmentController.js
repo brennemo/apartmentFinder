@@ -1,5 +1,5 @@
 //app.controller('ApartmentListController', ['$scope', function($scope) {
-angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scope', 'ApartmentListService', '$route', '$routeParams', function($scope, ApartmentListService, $route, $routeParams) {
+angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scope', 'ApartmentListService', '$route', '$routeParams', function($scope, $route, $routeParams, ApartmentListService) {
    $scope.status;    
    $scope.apartment;                                    
 
