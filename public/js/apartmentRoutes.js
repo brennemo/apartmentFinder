@@ -11,7 +11,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
     
     .when('/:apt_id', {
         templateUrl: 'views/apartmentDetails.html',
-        controller: 'ApartmentListController'
+        controller: 'ApartmentDetailsController'
     })
     
     .when('/add-apartment', {

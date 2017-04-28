@@ -1,3 +1,21 @@
 <div class="row">
-    <h3>Details will be here!</h3>
+        <h3>{{apartment.address}}</h3>
+        <div class="aptImg">    
+            <p class="price">{{ apartment.price | currency:'$':0 }} / month</p>
+            <img ng-show="apartment._id != null" ng-src="{{ apartment.photo }}">
+            <img ng-show="apartment._id == null" ng-src="/img/placeholder1.png">
+        </div>
+        <h4>{{ apartment.address }}</h4>
+        <span>
+              <p><ng-pluralize count="apartment.bedrooms"
+              when="{'0': 'studio', '1': '1 bedroom', 'other': '{} bedrooms'
+                    }">
+            </ng-pluralize></p>
+        </span>
+        <span class = "text-muted" ng-if="apartment.pets"><i class="material-icons md-18">pets</i></span>
+        <span class = "text-muted" ng-if="apartment.laundry"><i class="material-icons md-18">local_laundry_service</i></span>
+        <span class = "text-muted" ng-if="apartment.dishwasher"><i class="material-icons md-18">restaurant</i></span>
+        <span>
+            <p>Available {{ apartment.date | date }}</p>
+        </span>
 </div>

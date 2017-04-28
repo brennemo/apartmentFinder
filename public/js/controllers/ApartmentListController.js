@@ -1,4 +1,3 @@
-//app.controller('ApartmentListController', ['$scope', function($scope) {
 angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', 'ApartmentListService', function($scope, ApartmentListService) {
     $scope.status;
     $scope.apartments;
@@ -11,9 +10,8 @@ angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', '
     $scope.filterDishwasher = false;
 
     
-    /*REST*/
+    /*Load apartments*/
     getApartments();
-    //console.log($scope.apartments);
     
     /*Favorites*/
     $scope.favorites = [];
@@ -40,9 +38,6 @@ angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', '
     
     
     $scope.deleteApartment = function(apt_id) {
-        //console.log("deleteApartment() will happen here.");    
-        //console.log(apt_id);
-        
         ApartmentListService.deleteApartment(apt_id)
             .then (function(response) {
                 $scope.status = "Apartment deleted.";  
