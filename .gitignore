@@ -39,3 +39,4 @@ jspm_packages
 #Ignore config and libs folders
 /config
 /public/libs
+/public/js/config.js

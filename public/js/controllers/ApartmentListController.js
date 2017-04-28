@@ -6,6 +6,10 @@ angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', '
     
     /*Search*/
     $scope.searchApt = '';
+    $scope.filterPets = false;
+    $scope.filterLaundry = false;
+    $scope.filterDishwasher = false;
+
     
     /*REST*/
     getApartments();
@@ -18,7 +22,7 @@ angular.module('AppCtrl', []).controller('ApartmentListController', ['$scope', '
     }
     $scope.favorite = function(i) {
         if ($scope.favorites[i] == '#fff')
-            $scope.favorites[i] = '#ff9999'; 
+            $scope.favorites[i] = '#ff3366'; 
         else 
             $scope.favorites[i] = '#fff'; 
     };

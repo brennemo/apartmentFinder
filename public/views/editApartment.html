@@ -1,54 +1,84 @@
-<h3 ng-show="apartment._id != null">Edit apartment:</h3>
-<h3 ng-show="apartment._id == null">Add apartment:</h3>
+<div class="row">
+   <div class="col-sm-6"> 
+       <h3 ng-show="apartment._id != null">Edit apartment:</h3>
+       <h3 ng-show="apartment._id == null">Add apartment:</h3>
+    </div>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4"> 
+        <h3>Preview:</h3>
+    </div>
 
-<div class="col-sm-6">
-    <form ng-submit="updateApartment(apartment._id)">
-      <div class="form-group row">
-          <label for="example-text-input" class="col-2 col-form-label">Address</label>
-          <div class="col-4">
-            <input class="form-control" type="text" name="address" value="{{apartment.address}}" ng-model="apartment.address" id="example-text-input">
+    <div class="col-sm-6">
+        <form ng-submit="updateApartment(apartment._id)">
+          <div class="form-group row">
+              <label for="example-text-input" class="col-2 col-form-label">Address</label>
+              <div class="col-4">
+                <input class="form-control" type="text" name="address" value="{{apartment.address}}" ng-model="apartment.address" id="example-text-input">
+              </div>
           </div>
-      </div>
-      <div class="form-group row">
-          <label for="example-text-input" class="col-2 col-form-label">Number of Bedrooms</label>
-          <div class="col-4">
-            <input class="form-control" type="number" name="bedrooms" value="{{apartment.bedrooms | number}}" ng-model="apartment.bedrooms" id="example-text-input" min="0" max="4">
+          <div class="form-group row">
+              <label for="example-text-input" class="col-2 col-form-label">Number of Bedrooms</label>
+              <div class="col-4">
+                <input class="form-control" type="number" name="bedrooms" value="{{apartment.bedrooms | number}}" ng-model="apartment.bedrooms" id="example-text-input" min="0" max="4">
+              </div>
           </div>
-      </div>
-      <div class="form-group row">
-          <label for="example-text-input" class="col-2 col-form-label">Monthly Rent</label>
-          <div class="col-4">
-            <input class="form-control" type="number" name="price" value="{{apartment.price}}" ng-model="apartment.price" id="example-text-input">
+          <div class="form-group row">
+              <label for="example-text-input" class="col-2 col-form-label">Monthly Rent</label>
+              <div class="col-4">
+                <input class="form-control" type="number" name="price" value="{{apartment.price}}" ng-model="apartment.price" id="example-text-input">
+              </div>
           </div>
-      </div>
-      <!--<div class="form-group row">
-          <label for="example-text-input" class="col-2 col-form-label">Date Available</label>
-          <div class="col-4">
-            <input class="form-control" type="date" value="{{apartment.date | date:'yyyy-MM-dd'}}" ng-model="apartment.date" id="example-text-input">
-          </div>
-      </div>-->
-      <div class="form-group row">
-        <label class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" name="pets" ng-model="apartment.pets">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Pets allowed</span>
-        </label>
+          <div class="form-group row">
+              <label for="example-text-input" class="col-2 col-form-label">Date Available</label>
+              <div class="col-4">
+                <input class="form-control" type="date" value="{{apartment.date | date:'yyyy-MM-dd'}}" ng-model="apartment.date" id="example-text-input">
+              </div>
+</div>
+          <div class="form-group row">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="pets" ng-model="apartment.pets">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Pets allowed</span>
+            </label>
 
-        <label class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" name="laundry" ng-model="apartment.laundry">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Laundry</span>
-        </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="laundry" ng-model="apartment.laundry">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Laundry</span>
+            </label>
 
-        <label class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" name="dishwasher" ng-model="apartment.dishwasher">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Dishwasher</span>
-        </label>
-      </div>
-      <div class="form-group row">
-        <button type="submit" class="btn btn-default" ng-show="apartment._id != null">EDIT APARTMENT</button>
-        <button type="submit" class="btn btn-default" ng-show="apartment._id == null">ADD APARTMENT</button>
-      </div>
-    </form>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="dishwasher" ng-model="apartment.dishwasher">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Dishwasher</span>
+            </label>
+          </div>
+          <div class="form-group row">
+            <button type="submit" class="btn btn-default" ng-show="apartment._id != null">EDIT APARTMENT</button>
+            <button type="submit" class="btn btn-default" ng-show="apartment._id == null">ADD APARTMENT</button>
+          </div>
+        </form>
+    </div>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4 apartment" />
+        <div class="aptImg">    
+            <p class="price">{{ apartment.price | currency:'$':0 }} / month</p>
+            <img ng-show="apartment._id != null" ng-src="{{ apartment.photo }}">
+            <img ng-show="apartment._id == null" ng-src="/img/placeholder1.png">
+        </div>
+        <h4>{{ apartment.address }}</h4>
+        <span>
+              <p><ng-pluralize count="apartment.bedrooms"
+              when="{'0': 'studio', '1': '1 bedroom', 'other': '{} bedrooms'
+                    }">
+            </ng-pluralize></p>
+        </span>
+        <span class = "text-muted" ng-if="apartment.pets"><i class="material-icons md-18">pets</i></span>
+        <span class = "text-muted" ng-if="apartment.laundry"><i class="material-icons md-18">local_laundry_service</i></span>
+        <span class = "text-muted" ng-if="apartment.dishwasher"><i class="material-icons md-18">restaurant</i></span>
+        <span>
+            <p>Available {{ apartment.date | date }}</p>
+            <!--<p>{{ apartment.price | currency }} / month</p>-->
+        </span>
+    </div>
 </div>

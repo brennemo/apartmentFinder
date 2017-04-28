@@ -45,8 +45,7 @@
 
 <div class="row">
     <h3>Apartments available in your area:</h3>
-    <!-- ng-show="filterPets == apartment.pets" is janky version of filter -->
-    <div ng-repeat="apartment in apartments | filter:searchApt" class="col-sm-4 apartment" />
+    <div ng-repeat="apartment in apartments | filter:searchApt" ng-hide="filterPets && apartment.pets == false" class="col-sm-4 apartment" />
         <div class="aptImg">    
             <i class="material-icons heart" ng-click="favorite($index)" style="color:{{favorites[$index]}};">favorite</i>
             <p class="price">{{ apartment.price | currency:'$':0 }} / month</p>

@@ -19,7 +19,7 @@ var createApartments = function createApartments() {
                                  price: price, 
                                  bedrooms: getRandomIntInclusive(0, 4), 
                                  pets: getRandomIntInclusive(0, 1), 
-                                 laundry: getRandomIntInclusive(0, 1), 
+                                 laundry: true, 
                                  dishwasher: getRandomIntInclusive(0, 1),
                                  photo: 'img/placeholder'+ imgIdx + '.png' 
                                 });

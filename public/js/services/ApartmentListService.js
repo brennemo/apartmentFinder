@@ -9,12 +9,12 @@ angular.module('ApartmentListService', []).factory('ApartmentListService', ['$ht
             return $http.get('/api/apartments/' + apt_id);
         },
         
-        insertApartment: function(apt_id) {
-            return $http.post('/api/apartments', apt_id);
+        insertApartment: function(apt) {
+            return $http.post('/api/apartments', apt);
         },
             
-        updateApartment: function(apt_id) {
-            return $http.put('/api/apartments/' + apt_id, apt_id);
+        updateApartment: function(apt) {
+            return $http.put('/api/apartments/' + apt.apt_id, apt);
         },
         
         deleteApartment: function(apt_id) {

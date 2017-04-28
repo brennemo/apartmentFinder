@@ -1,5 +1,5 @@
 //app.controller('ApartmentListController', ['$scope', function($scope) {
-angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scope', 'ApartmentListService', '$routeParams', function($scope, ApartmentListService, $routeParams) {
+angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scope', 'ApartmentListService', '$route', '$routeParams', function($scope, ApartmentListService, $route, $routeParams) {
    $scope.status;    
    $scope.apartment;                                    
 
@@ -17,6 +17,20 @@ angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scop
                                             
     $scope.updateApartment = function(apt_id) {
         console.log("updateApartment() will happen here.");  
+        
+        var postData = {
+            apt_id: apt_id,
+            address: $scope.apartment.address,
+            price: $scope.apartment.price,
+            beddrooms: $scope.apartment.bedrooms,
+            pets: $scope.apartment.pets,
+            laundry: $scope.apartment.laundry,
+            dishwasher: $scope.apartment.dishwasher 
+        };
+        
+        console.log(postData);
+        
+        ApartmentListService.updateApartment(postData).then(function(response) { $route.reload(); });
         
     }
     
