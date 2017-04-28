@@ -1,6 +1,7 @@
 //app.controller('ApartmentListController', ['$scope', function($scope) {
 angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scope', 'ApartmentListService', '$route', '$routeParams', function($scope, ApartmentListService, $route, $routeParams) {
    $scope.status;    
+   $scope.title = "Edit apartment";
    $scope.apartment;                                    
 
     var apt_id = $routeParams.apt_id;                               
@@ -14,9 +15,14 @@ angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scop
                 $scope.status = 'Unable to load apartment data: ' + error.message;
             });   
     }
+    
+  
                                             
-    $scope.updateApartment = function(apt_id) {
-        console.log("updateApartment() will happen here.");  
+    $scope.updateApartment = function() {
+        if (apt_id != null) console.log("updateApartment() will happen here.");  
+        
+        if (apt_id == null) console.log("Add!");
+        console.log(apt_id);
         
         var postData = {
             apt_id: apt_id,
