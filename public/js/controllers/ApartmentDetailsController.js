@@ -6,6 +6,7 @@ angular.module('DtlCtrl', []).controller('ApartmentDetailsController', ['$scope'
 
     /*Load apartments*/
     getApartment(apt_id);
+
     
     function getApartment(apt_id) {
         ApartmentListService.getApartment(apt_id) 

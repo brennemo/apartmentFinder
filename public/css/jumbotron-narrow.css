@@ -102,7 +102,7 @@ body {
 }
 
 
-/*Apartment Image*/
+/*Apartment Image on Listings*/
 .aptImg {
     display: inline-block;
     position: relative;
@@ -153,4 +153,14 @@ body {
 label {
     font-weight: 400;
     color: #555; 
+}
+
+/*Apartment Details*/
+.detail-img {
+    width: 600px;
+    height: 350px;
+}
+
+.description {
+  line-height: 180%;  
 }
