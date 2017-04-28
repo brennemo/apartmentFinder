@@ -1,11 +1,21 @@
 //app.controller('ApartmentListController', ['$scope', function($scope) {
 angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scope', 'ApartmentListService', '$route', '$routeParams', function($scope, ApartmentListService, $route, $routeParams) {
    $scope.status;    
-   $scope.title = "Edit apartment";
    $scope.apartment;                                    
 
-    var apt_id = $routeParams.apt_id;                               
-    getApartment(apt_id);
+    var apt_id = $routeParams.apt_id;   
+    
+    //Update existing apartment - load fields 
+    if (apt_id) {
+        getApartment(apt_id); 
+        $scope.title = "Edit apartment";
+        console.log("apartment loaded!");
+    }
+    //Add new apartment - leave blank 
+    else {
+        $scope.title = "Add apartment";    
+    }
+       
     
     function getApartment(apt_id) {
         ApartmentListService.getApartment(apt_id) 
@@ -19,24 +29,30 @@ angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scop
   
                                             
     $scope.updateApartment = function() {
-        if (apt_id != null) console.log("updateApartment() will happen here.");  
+        //Update existing apartment 
+        if (apt_id != null) {
+            console.log("updateApartment() will happen here.");  
+
+            var postData = {
+                apt_id: apt_id,
+                address: $scope.apartment.address,
+                price: $scope.apartment.price,
+                beddrooms: $scope.apartment.bedrooms,
+                pets: $scope.apartment.pets,
+                laundry: $scope.apartment.laundry,
+                dishwasher: $scope.apartment.dishwasher 
+            };
+
+            //console.log(postData);
+
+            ApartmentListService.updateApartment(postData).then(function(response) { $route.reload(); });
+        }
         
-        if (apt_id == null) console.log("Add!");
-        console.log(apt_id);
         
-        var postData = {
-            apt_id: apt_id,
-            address: $scope.apartment.address,
-            price: $scope.apartment.price,
-            beddrooms: $scope.apartment.bedrooms,
-            pets: $scope.apartment.pets,
-            laundry: $scope.apartment.laundry,
-            dishwasher: $scope.apartment.dishwasher 
-        };
-        
-        console.log(postData);
-        
-        ApartmentListService.updateApartment(postData).then(function(response) { $route.reload(); });
+        //Add new apartment
+        else {
+            console.log("Add!");
+        }
         
     }
     
