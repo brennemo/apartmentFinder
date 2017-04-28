@@ -61,7 +61,12 @@ router.route('/apartments')
 	.post(function(req, res) {
 		
 		var apt = new Apartment();	
-		apt.name = req.body.name;  
+		apt.address = req.body.address;
+        apt.price = req.body.price;
+        apt.bedrooms = req.body.bedrooms; 
+        apt.pets = req.body.pets;
+        apt.laundry = req.body.laundry;
+        apt.dishwasher = req.body.dishwasher;
     
 		apt.save(function(err) {
 			if (err)

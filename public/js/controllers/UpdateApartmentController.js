@@ -9,7 +9,7 @@ angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scop
     if (apt_id) {
         getApartment(apt_id); 
         $scope.title = "Edit apartment";
-        console.log("apartment loaded!");
+        //console.log("apartment loaded!");
     }
     //Add new apartment - leave blank 
     else {
@@ -44,7 +44,6 @@ angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scop
             };
 
             //console.log(postData);
-
             ApartmentListService.updateApartment(postData).then(function(response) { $route.reload(); });
         }
         
@@ -52,6 +51,17 @@ angular.module('UpdateCtrl', []).controller('UpdateApartmentController', ['$scop
         //Add new apartment
         else {
             console.log("Add!");
+            
+            var postData = {
+                address: $scope.apartment.address,
+                price: $scope.apartment.price,
+                beddrooms: $scope.apartment.bedrooms,
+                pets: $scope.apartment.pets,
+                laundry: $scope.apartment.laundry,
+                dishwasher: $scope.apartment.dishwasher 
+            };
+            
+            ApartmentListService.insertApartment(postData).then(function(response) { $route.reload(); });
         }
         
     }
